@@ -1,4 +1,3 @@
-
 // riscvpipelined.sv
 
 // RISC-V pipelined processor
@@ -115,10 +114,10 @@ module testbench();
 	if(MemWrite) begin
            if(DataAdr === 100 & WriteData === 10) begin
               $display("Simulation succeeded");
-              $stop;
+              //$stop;
            end else if (DataAdr === 100 & WriteData === 17) begin
               $display("Simulation failed");
-              $stop;
+              //$stop;
            end
 	end
      end
@@ -260,7 +259,7 @@ module maindec(input  logic [6:0] op,
        7'b0000011: controls = 13'b1_000_0_1_0_01_0_00_0; // lw
        7'b0100011: controls = 13'b0_001_0_1_1_00_0_00_0; // sw
        7'b0110011: controls = 13'b1_xxx_0_0_0_00_0_10_0; // R-type 
-       7'b1100011: controls = 13'b0_010_0_0_0_00_1_01_0; // beq
+       7'b1100011: controls = 13'b0_010_0_0_0_00_1_01_0; // branches
        7'b0010011: controls = 13'b1_000_0_1_0_00_0_10_0; // I-type ALU
        7'b1101111: controls = 13'b1_011_0_0_0_10_0_00_1; // jal
        7'b0110111: controls = 13'b1_100_1_1_0_00_0_00_0; // lui       
@@ -535,7 +534,7 @@ endmodule
 module imem (input  logic [31:0] a,
 	     output logic [31:0] rd);
    
-   logic [31:0] 		 RAM[63:0];
+   logic [31:0] 		 RAM[1500:0];
    
    assign rd = RAM[a[31:2]]; // word aligned
    
@@ -545,7 +544,7 @@ module dmem (input  logic        clk, we,
 	     input  logic [31:0] a, wd,
 	     output logic [31:0] rd);
    
-   logic [31:0] 		 RAM[255:0];
+   logic [31:0] 		 RAM[2047:0];
    
    assign rd = RAM[a[31:2]]; // word aligned
    always_ff @(posedge clk)
