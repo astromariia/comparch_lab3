@@ -214,7 +214,8 @@ module controller(input  logic		 clk, reset,
    logic [2:0] 			     ALUControlD;
    logic 			     ALUSrcAD;   
    logic 			     ALUSrcBD;
-   logic [2:0] 			     funct3E;   
+   logic [2:0] 			     funct3E;
+   logic  BranchoutE;   
    
    // Decode stage logic
    maindec md(opD, ResultSrcD, MemWriteD, BranchD,
@@ -227,6 +228,7 @@ module controller(input  logic		 clk, reset,
                             {RegWriteE, ResultSrcE, MemWriteE, JumpE, BranchE, ALUControlE, ALUSrcAE, ALUSrcBE, funct3E});
 
    assign PCSrcE = (BranchE & (ZeroE ^ funct3E[0])) | JumpE;
+   
    assign ResultSrcEb0 = ResultSrcE[0];
    
    // Memory stage pipeline control register
@@ -355,6 +357,7 @@ module datapath(input logic clk, reset,
    logic [31:0] 		    ReadDataW;
    logic [31:0] 		    PCPlus4W;
    logic [31:0] 		    ResultW;
+   logic NegativeE, CarryE;
 
    // Fetch stage pipeline register and logic
    mux2    #(32) pcmux(PCPlus4F, PCTargetE, PCSrcE, PCNextF);
@@ -384,7 +387,7 @@ module datapath(input logic clk, reset,
    mux3   #(32)  fbemux(RD2E, ResultW, ALUResultM, ForwardBE, WriteDataE);
    mux2   #(32)  srcamux(SrcAEforward, 32'h0, ALUSrcAE, SrcAE);   
    mux2   #(32)  srcbmux(WriteDataE, ImmExtE, ALUSrcBE, SrcBE);
-   alu           alu(SrcAE, SrcBE, ALUControlE, ALUResultE, ZeroE);
+   alu           alu(SrcAE, SrcBE, ALUControlE, ALUResultE, ZeroE, NegativeE,CarryE);
    adder         branchadd(ImmExtE, PCE, PCTargetE);
 
    // Memory stage pipeline register
@@ -562,16 +565,18 @@ endmodule // dmem
 module alu(input  logic [31:0] a, b,
            input logic [2:0]   alucontrol,
            output logic [31:0] result,
-           output logic        zero);
+           output logic        zero, Negative,Carry);
 
    logic [31:0] 	       condinvb, sum;
    logic 		       v;              // overflow
    logic 		       isAddSub;       // true when is add or sub
+   logic [32:0] Carryholder;
 
    assign condinvb = alucontrol[0] ? ~b : b;
    assign sum = a + condinvb + alucontrol[0];
    assign isAddSub = ~alucontrol[2] & ~alucontrol[1] |
                      ~alucontrol[1] &  alucontrol[0];
+    assign Carryholder = {1'b0, a} + {1'b0, condinvb} + alucontrol[0];
 
    always_comb
      case (alucontrol)
@@ -588,5 +593,15 @@ module alu(input  logic [31:0] a, b,
 
    assign zero = (result == 32'b0);
    assign v = ~(alucontrol[0] ^ a[31] ^ b[31]) & (a[31] ^ sum[31]) & isAddSub;
+   assign Negative = (result[31]);
+   assign Carry =  Carryholder[32];
    
 endmodule
+
+// module #(
+//   parameters
+// ) (
+//   ports
+// );
+  
+// endmodule
