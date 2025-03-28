@@ -92,7 +92,7 @@ module testbench();
    initial
      begin
 	string memfilename;
-        memfilename = {"../riscvtest/lui-test.memfile"};
+        memfilename = {"../testing/bne.memfile"};
 	$readmemh(memfilename, dut.imem.RAM);
      end
    
@@ -148,7 +148,7 @@ module riscv(input  logic        clk, reset,
    logic [2:0] 			 funct3D;
    logic 			 funct7b5D;
    logic [2:0] 			 ImmSrcD;
-   logic 			 ZeroE;
+   logic 			 ZeroE,NegativeE,CarryE,vE;
    logic 			 PCSrcE;
    logic [2:0] 			 ALUControlE;
    logic 			 ALUSrcAE;   
@@ -165,14 +165,14 @@ module riscv(input  logic        clk, reset,
    
    controller c(clk, reset,
 		opD, funct3D, funct7b5D, ImmSrcD,
-		FlushE, ZeroE, PCSrcE, ALUControlE, ALUSrcAE, ALUSrcBE, ResultSrcEb0,
+		FlushE, ZeroE,NegativeE,CarryE,vE, PCSrcE, ALUControlE, ALUSrcAE, ALUSrcBE, ResultSrcEb0,
 		MemWriteM, RegWriteM, 
 		RegWriteW, ResultSrcW);
 
    datapath dp(clk, reset,
                StallF, PCF, InstrF,
 	       opD, funct3D, funct7b5D, StallD, FlushD, ImmSrcD,
-	       FlushE, ForwardAE, ForwardBE, PCSrcE, ALUControlE, ALUSrcAE, ALUSrcBE, ZeroE,
+	       FlushE, ForwardAE, ForwardBE, PCSrcE, ALUControlE, ALUSrcAE, ALUSrcBE, ZeroE,NegativeE,CarryE,vE,
                MemWriteM, WriteDataM, ALUResultM, ReadDataM,
                RegWriteW, ResultSrcW,
                Rs1D, Rs2D, Rs1E, Rs2E, RdE, RdM, RdW);
@@ -191,7 +191,7 @@ module controller(input  logic		 clk, reset,
                   output logic [2:0] ImmSrcD,
                   // Execute stage control signals
                   input logic 	     FlushE, 
-                  input logic 	     ZeroE, 
+                  input logic 	     ZeroE,NegativeE,CarryE,vE, 
                   output logic 	     PCSrcE, // for datapath and Hazard Unit
                   output logic [2:0] ALUControlE,
 		  output logic 	     ALUSrcAE,
@@ -215,7 +215,7 @@ module controller(input  logic		 clk, reset,
    logic 			     ALUSrcAD;   
    logic 			     ALUSrcBD;
    logic [2:0] 			     funct3E;
-   logic  BranchoutE;   
+   logic  Branchout;   
    
    // Decode stage logic
    maindec md(opD, ResultSrcD, MemWriteD, BranchD,
@@ -227,7 +227,20 @@ module controller(input  logic		 clk, reset,
                             {RegWriteD, ResultSrcD, MemWriteD, JumpD, BranchD, ALUControlD, ALUSrcAD, ALUSrcBD, funct3D},
                             {RegWriteE, ResultSrcE, MemWriteE, JumpE, BranchE, ALUControlE, ALUSrcAE, ALUSrcBE, funct3E});
 
-   assign PCSrcE = (BranchE & (ZeroE ^ funct3E[0])) | JumpE;
+
+assign PCSrcE = Branchout | JumpE; //Branch & (Zero ^ funct3[0])
+   always_comb
+    case(funct3E)
+    3'b000: Branchout = BranchE & ZeroE;                     // beg
+    3'b001: Branchout = BranchE & ~ZeroE;                    // bne
+    3'b100: Branchout = BranchE & (NegativeE != vE);   // blt (signed)
+    3'b101: Branchout = BranchE & (NegativeE == vE);   // bge (signed)
+    3'b110: Branchout = BranchE & ~CarryE;                   // bltu (unsigned)
+    3'b111: Branchout = BranchE & CarryE;                    // bgeu (unsigned)
+    default: Branchout = 0;
+  endcase
+
+   //assign PCSrcE = (BranchE & (ZeroE ^ funct3E[0])) | JumpE;
    
    assign ResultSrcEb0 = ResultSrcE[0];
    
@@ -321,7 +334,7 @@ module datapath(input logic clk, reset,
                 input logic [2:0]   ALUControlE,
 		input logic 	    ALUSrcAE,
                 input logic 	    ALUSrcBE,
-                output logic 	    ZeroE,
+                output logic 	    ZeroE,NegativeE,CarryE,vE,
                 // Memory stage signals
                 input logic 	    MemWriteM, 
                 output logic [31:0] WriteDataM, ALUResultM,
@@ -357,7 +370,6 @@ module datapath(input logic clk, reset,
    logic [31:0] 		    ReadDataW;
    logic [31:0] 		    PCPlus4W;
    logic [31:0] 		    ResultW;
-   logic NegativeE, CarryE;
 
    // Fetch stage pipeline register and logic
    mux2    #(32) pcmux(PCPlus4F, PCTargetE, PCSrcE, PCNextF);
@@ -387,7 +399,7 @@ module datapath(input logic clk, reset,
    mux3   #(32)  fbemux(RD2E, ResultW, ALUResultM, ForwardBE, WriteDataE);
    mux2   #(32)  srcamux(SrcAEforward, 32'h0, ALUSrcAE, SrcAE);   
    mux2   #(32)  srcbmux(WriteDataE, ImmExtE, ALUSrcBE, SrcBE);
-   alu           alu(SrcAE, SrcBE, ALUControlE, ALUResultE, ZeroE, NegativeE,CarryE);
+   alu           alu(SrcAE, SrcBE, ALUControlE, ALUResultE, ZeroE, NegativeE,CarryE,vE);
    adder         branchadd(ImmExtE, PCE, PCTargetE);
 
    // Memory stage pipeline register
@@ -562,13 +574,12 @@ module dmem (input  logic        clk, we,
    
 endmodule // dmem
 
-module alu(input  logic [31:0] a, b,
+module alu (input  logic [31:0] a, b,
            input logic [2:0]   alucontrol,
            output logic [31:0] result,
-           output logic        zero, Negative,Carry);
+           output logic        zero,Negative,Carry,v);
 
-   logic [31:0] 	       condinvb, sum;
-   logic 		       v;              // overflow
+   logic [31:0] 	       condinvb, sum;            
    logic 		       isAddSub;       // true when is add or sub
    logic [32:0] Carryholder;
 
