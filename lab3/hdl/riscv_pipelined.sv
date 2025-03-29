@@ -92,7 +92,7 @@ module testbench();
    initial
      begin
 	string memfilename;
-        memfilename = {"../testing/bne.memfile"};
+        memfilename = {"../testing/sltu.memfile"};
 	$readmemh(memfilename, dut.imem.RAM);
      end
    
@@ -150,7 +150,7 @@ module riscv(input  logic        clk, reset,
    logic [2:0] 			 ImmSrcD;
    logic 			 ZeroE,NegativeE,CarryE,vE;
    logic 			 PCSrcE;
-   logic [2:0] 			 ALUControlE;
+   logic [3:0] 			 ALUControlE;
    logic 			 ALUSrcAE;   
    logic 			 ALUSrcBE;
    logic 			 ResultSrcEb0;
@@ -193,7 +193,7 @@ module controller(input  logic		 clk, reset,
                   input logic 	     FlushE, 
                   input logic 	     ZeroE,NegativeE,CarryE,vE, 
                   output logic 	     PCSrcE, // for datapath and Hazard Unit
-                  output logic [2:0] ALUControlE,
+                  output logic [3:0] ALUControlE,
 		  output logic 	     ALUSrcAE,
                   output logic 	     ALUSrcBE,
                   output logic 	     ResultSrcEb0, // for Hazard Unit
@@ -211,7 +211,7 @@ module controller(input  logic		 clk, reset,
    logic 			     JumpD, JumpE;
    logic 			     BranchD, BranchE;
    logic [1:0] 			     ALUOpD;
-   logic [2:0] 			     ALUControlD;
+   logic [3:0] 			     ALUControlD;
    logic 			     ALUSrcAD;   
    logic 			     ALUSrcBD;
    logic [2:0] 			     funct3E;
@@ -223,7 +223,7 @@ module controller(input  logic		 clk, reset,
    aludec  ad(opD[5], funct3D, funct7b5D, ALUOpD, ALUControlD);
    
    // Execute stage pipeline control register and logic
-   floprc #(14) controlregE(clk, reset, FlushE,
+   floprc #(15) controlregE(clk, reset, FlushE,
                             {RegWriteD, ResultSrcD, MemWriteD, JumpD, BranchD, ALUControlD, ALUSrcAD, ALUSrcBD, funct3D},
                             {RegWriteE, ResultSrcE, MemWriteE, JumpE, BranchE, ALUControlE, ALUSrcAE, ALUSrcBE, funct3E});
 
@@ -287,18 +287,18 @@ module aludec(input  logic       opb5,
               input logic [2:0]  funct3,
               input logic 	 funct7b5, 
               input logic [1:0]  ALUOp,
-              output logic [2:0] ALUControl);
+              output logic [3:0] ALUControl);
 
    logic 			 RtypeSub;
    assign RtypeSub = funct7b5 & opb5;  // TRUE for R-type subtract instruction
 
    always_comb
      case(ALUOp)
-       2'b00:                ALUControl = 3'b000; // addition
-       2'b01:                ALUControl = 3'b001; // subtraction
+       2'b00:                ALUControl = 4'b0000; // addition
+       2'b01:                ALUControl = 4'b0001; // subtraction
        default: case(funct3) // R-type or I-type ALU
                   3'b000:  if (RtypeSub) 
-                    ALUControl = 3'b001; // sub
+                    ALUControl = 4'b0001; // sub
                  else
 		                ALUControl = 4'b0000; // add, addi
 		            3'b010: ALUControl = 4'b0101; // slt, slti
@@ -331,7 +331,7 @@ module datapath(input logic clk, reset,
                 input logic 	    FlushE,
                 input logic [1:0]   ForwardAE, ForwardBE,
                 input logic 	    PCSrcE,
-                input logic [2:0]   ALUControlE,
+                input logic [3:0]   ALUControlE,
 		input logic 	    ALUSrcAE,
                 input logic 	    ALUSrcBE,
                 output logic 	    ZeroE,NegativeE,CarryE,vE,
@@ -575,7 +575,7 @@ module dmem (input  logic        clk, we,
 endmodule // dmem
 
 module alu (input  logic [31:0] a, b,
-           input logic [2:0]   alucontrol,
+           input logic [3:0]   alucontrol,
            output logic [31:0] result,
            output logic        zero,Negative,Carry,v);
 
@@ -591,14 +591,16 @@ module alu (input  logic [31:0] a, b,
 
    always_comb
      case (alucontrol)
-       3'b000:  result = sum;         // add
-       3'b001:  result = sum;         // subtract
-       3'b010:  result = a & b;       // and
-       3'b011:  result = a | b;       // or
-       3'b100:  result = a ^ b;       // xor
-       3'b101:  result = sum[31] ^ v; // slt
-       3'b110:  result = a << b[4:0]; // sll
-       3'b111:  result = a >> b[4:0]; // srl
+       4'b0000:  result = sum;         // add
+       4'b0001:  result = sum;         // subtract
+       4'b0010:  result = a & b;       // and
+       4'b0011:  result = a | b;       // or
+       4'b0100:  result = a ^ b;       // xor
+       4'b0101:  result = sum[31] ^ v; // slt
+       4'b0110:  result = a << b[4:0]; // sll
+       4'b1001: result = (a < b) ? 32'd1 : 32'd0; //sltu
+       4'b0111:  result = a >> b[4:0]; // srl
+       4'b1000: result = $signed(a) >>> b[4:0]; //sra/srai
        default: result = 32'bx;
      endcase
 
