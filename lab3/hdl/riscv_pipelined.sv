@@ -92,7 +92,7 @@ module testbench();
    initial
      begin
 	string memfilename;
-        memfilename = {"../testing/sltu.memfile"};
+        memfilename = {"../testing/xor.memfile"};
 	$readmemh(memfilename, dut.imem.RAM);
      end
    
@@ -162,14 +162,15 @@ module riscv(input  logic        clk, reset,
    logic 			 StallF, StallD, FlushD, FlushE;
 
    logic [4:0] 			 Rs1D, Rs2D, Rs1E, Rs2E, RdE, RdM, RdW;
+   logic              JalrControlE;
    
    controller c(clk, reset,
 		opD, funct3D, funct7b5D, ImmSrcD,
 		FlushE, ZeroE,NegativeE,CarryE,vE, PCSrcE, ALUControlE, ALUSrcAE, ALUSrcBE, ResultSrcEb0,
 		MemWriteM, RegWriteM, 
-		RegWriteW, ResultSrcW);
+		RegWriteW, ResultSrcW, JalrControlE);
 
-   datapath dp(clk, reset,
+   datapath dp(clk, reset, JalrControlE,
                StallF, PCF, InstrF,
 	       opD, funct3D, funct7b5D, StallD, FlushD, ImmSrcD,
 	       FlushE, ForwardAE, ForwardBE, PCSrcE, ALUControlE, ALUSrcAE, ALUSrcBE, ZeroE,NegativeE,CarryE,vE,
@@ -202,7 +203,8 @@ module controller(input  logic		 clk, reset,
                   output logic 	     RegWriteM, // for Hazard Unit				  
                   // Writeback stage control signals
                   output logic 	     RegWriteW, // for datapath and Hazard Unit
-                  output logic [1:0] ResultSrcW);
+                  output logic [1:0] ResultSrcW,
+                  output logic      JalrControlD);
 
    // pipelined control signals
    logic 			     RegWriteD, RegWriteE;
@@ -219,7 +221,7 @@ module controller(input  logic		 clk, reset,
    
    // Decode stage logic
    maindec md(opD, ResultSrcD, MemWriteD, BranchD,
-              ALUSrcAD, ALUSrcBD, RegWriteD, JumpD, ImmSrcD, ALUOpD);
+              ALUSrcAD, ALUSrcBD, RegWriteD, JumpD, JalrControlD, ImmSrcD, ALUOpD);
    aludec  ad(opD[5], funct3D, funct7b5D, ALUOpD, ALUControlD);
    
    // Execute stage pipeline control register and logic
@@ -259,27 +261,29 @@ module maindec(input  logic [6:0] op,
                output logic [1:0] ResultSrc,
                output logic 	  MemWrite,
                output logic 	  Branch, ALUSrcA, ALUSrcB,
-               output logic 	  RegWrite, Jump,
+               output logic 	  RegWrite, Jump, JalrControl,
                output logic [2:0] ImmSrc,
                output logic [1:0] ALUOp);
 
-   logic [12:0] 		  controls;
+   logic [14:0] 		  controls;
 
    assign {RegWrite, ImmSrc, ALUSrcA, ALUSrcB, MemWrite,
-           ResultSrc, Branch, ALUOp, Jump} = controls;
+           ResultSrc, Branch, ALUOp, Jump, JalrControl} = controls;
 
    always_comb
      case(op)
-       // RegWrite_ImmSrc_ALUSrcA_ALUSrcB_MemWrite_ResultSrc_Branch_ALUOp_Jump
-       7'b0000011: controls = 13'b1_000_0_1_0_01_0_00_0; // lw
-       7'b0100011: controls = 13'b0_001_0_1_1_00_0_00_0; // sw
-       7'b0110011: controls = 13'b1_xxx_0_0_0_00_0_10_0; // R-type 
-       7'b1100011: controls = 13'b0_010_0_0_0_00_1_01_0; // branches
-       7'b0010011: controls = 13'b1_000_0_1_0_00_0_10_0; // I-type ALU
-       7'b1101111: controls = 13'b1_011_0_0_0_10_0_00_1; // jal
-       7'b0110111: controls = 13'b1_100_1_1_0_00_0_00_0; // lui       
-       7'b0000000: controls = 13'b0_000_0_0_0_00_0_00_0; // need valid values at reset
-       default:    controls = 13'bx_xx_x_x_x_xx_x_xx_x; // non-implemented instruction
+       // RegWrite_ImmSrc_ALUSrcA_ALUSrcB_MemWrite_ResultSrc_Branch_ALUOp_Jump_JalrControl
+       7'b0000011: controls = 15'b1_000_0_1_0_01_0_00_0_0; // lw
+       7'b0100011: controls = 15'b0_001_0_1_1_00_0_00_0_0; // sw
+       7'b0110011: controls = 15'b1_xxx_0_0_0_00_0_10_0_0; // R-type 
+       7'b1100011: controls = 15'b0_010_0_0_0_00_1_01_0_0; // branches
+       7'b0010011: controls = 15'b1_000_0_1_0_00_0_10_0_0; // I-type ALU
+       7'b1101111: controls = 15'b1_011_0_0_0_10_0_00_1_0; // jal
+       7'b0110111: controls = 15'b1_100_1_1_0_00_0_00_0_0; // lui
+       7'b1100111: controls = 15'b1_000_0_0_0_00_0_00_1_1; // jalr
+       7'b0010111: controls = 15'b1_100_0_0_0_00_0_00_0_0; // auipc    
+       7'b0000000: controls = 15'b0_000_0_0_0_00_0_00_0_0; // need valid values at reset
+       default:    controls = 15'bx_xx_x_x_x_xx_x_xx_x_x; // non-implemented instruction
      endcase
 endmodule
 
@@ -319,6 +323,7 @@ endmodule
 module datapath(input logic clk, reset,
                 // Fetch stage signals
                 input logic 	    StallF,
+                input logic       JalrControlD,
                 output logic [31:0] PCF,
                 input logic [31:0]  InstrF,
                 // Decode stage signals
