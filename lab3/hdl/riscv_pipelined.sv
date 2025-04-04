@@ -204,7 +204,7 @@ module controller(input  logic		 clk, reset,
                   // Writeback stage control signals
                   output logic 	     RegWriteW, // for datapath and Hazard Unit
                   output logic [1:0] ResultSrcW,
-                  output logic      JalrControlD);
+                  output logic      JalrControlE);
 
    // pipelined control signals
    logic 			     RegWriteD, RegWriteE;
@@ -226,8 +226,8 @@ module controller(input  logic		 clk, reset,
    
    // Execute stage pipeline control register and logic
    floprc #(15) controlregE(clk, reset, FlushE,
-                            {RegWriteD, ResultSrcD, MemWriteD, JumpD, BranchD, ALUControlD, ALUSrcAD, ALUSrcBD, funct3D},
-                            {RegWriteE, ResultSrcE, MemWriteE, JumpE, BranchE, ALUControlE, ALUSrcAE, ALUSrcBE, funct3E});
+                            {RegWriteD, ResultSrcD, MemWriteD, JumpD, BranchD, ALUControlD, ALUSrcAD, ALUSrcBD, funct3D,JalrControlD},
+                            {RegWriteE, ResultSrcE, MemWriteE, JumpE, BranchE, ALUControlE, ALUSrcAE, ALUSrcBE, funct3E,JalrControlE});
 
 
 assign PCSrcE = Branchout | JumpE; //Branch & (Zero ^ funct3[0])
@@ -323,7 +323,7 @@ endmodule
 module datapath(input logic clk, reset,
                 // Fetch stage signals
                 input logic 	    StallF,
-                input logic       JalrControlD,
+                input logic       JalrControlE,
                 output logic [31:0] PCF,
                 input logic [31:0]  InstrF,
                 // Decode stage signals
