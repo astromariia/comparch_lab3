@@ -375,6 +375,7 @@ module datapath(input logic clk, reset,
    logic [31:0] 		    ReadDataW;
    logic [31:0] 		    PCPlus4W;
    logic [31:0] 		    ResultW;
+   logic [31:0]         PCTargetEmux;
 
    // Fetch stage pipeline register and logic
    mux2    #(32) pcmux(PCPlus4F, PCTargetE, PCSrcE, PCNextF);
@@ -404,8 +405,9 @@ module datapath(input logic clk, reset,
    mux3   #(32)  fbemux(RD2E, ResultW, ALUResultM, ForwardBE, WriteDataE);
    mux2   #(32)  srcamux(SrcAEforward, 32'h0, ALUSrcAE, SrcAE);   
    mux2   #(32)  srcbmux(WriteDataE, ImmExtE, ALUSrcBE, SrcBE);
+   mux2   #(32)  JalrMux(PCTargetEmux,ALUResultE,JalrControlE,PCTargetE);
    alu           alu(SrcAE, SrcBE, ALUControlE, ALUResultE, ZeroE, NegativeE,CarryE,vE);
-   adder         branchadd(ImmExtE, PCE, PCTargetE);
+   adder         branchadd(ImmExtE, PCE, PCTargetEmux);
 
    // Memory stage pipeline register
    flopr  #(101) regM(clk, reset, 
@@ -556,6 +558,14 @@ module mux3 #(parameter WIDTH = 8)
     output logic [WIDTH-1:0] y);
 
    assign y = s[1] ? d2 : (s[0] ? d1 : d0); 
+endmodule
+
+module mux4 #(parameter WIDTH = 8)
+   (input  logic [WIDTH-1:0] d0, d1, d2, d3,
+    input logic [1:0] 	     s, 
+    output logic [WIDTH-1:0] y);
+
+   assign y = s[1] ?(s[0]? d3 : d2) : (s[0] ? d1 : d0); 
 endmodule
 
 module imem (input  logic [31:0] a,
