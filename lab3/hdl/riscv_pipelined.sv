@@ -92,7 +92,7 @@ module testbench();
    initial
      begin
 	string memfilename;
-        memfilename = {"../testing/jalr.memfile"};
+        memfilename = {"../testing/jal.memfile"};
 	$readmemh(memfilename, dut.imem.RAM);
      end
    
@@ -170,8 +170,7 @@ module riscv(input  logic        clk, reset,
 		MemWriteM, RegWriteM, 
 		RegWriteW, ResultSrcW, JalrControlE);
 
-   datapath dp(clk, reset, JalrControlE,
-               StallF, PCF, InstrF,
+   datapath dp(clk, reset, StallF, JalrControlE, PCF, InstrF,
 	       opD, funct3D, funct7b5D, StallD, FlushD, ImmSrcD,
 	       FlushE, ForwardAE, ForwardBE, PCSrcE, ALUControlE, ALUSrcAE, ALUSrcBE, ZeroE,NegativeE,CarryE,vE,
                MemWriteM, WriteDataM, ALUResultM, ReadDataM,
