@@ -92,7 +92,7 @@ module testbench();
    initial
      begin
 	string memfilename;
-        memfilename = {"../testing/jalr.memfile"};
+        memfilename = {"../testing/sh.memfile"};
 	$readmemh(memfilename, dut.imem.RAM);
      end
    
@@ -163,12 +163,13 @@ module riscv(input  logic        clk, reset,
 
    logic [4:0] 			 Rs1D, Rs2D, Rs1E, Rs2E, RdE, RdM, RdW;
    logic              JalrControlE;
+   logic [2:0]              funct3M;
    
    controller c(clk, reset,
 		opD, funct3D, funct7b5D, ImmSrcD,
 		FlushE, ZeroE,NegativeE,CarryE,vE, PCSrcE, ALUControlE, ALUSrcAE, ALUSrcBE, ResultSrcEb0,
 		MemWriteM, RegWriteM, 
-		RegWriteW, ResultSrcW, JalrControlE);
+		RegWriteW, ResultSrcW, JalrControlE, funct3M);
 
    datapath dp(clk, reset, StallF, JalrControlE, PCF, InstrF,
 	       opD, funct3D, funct7b5D, StallD, FlushD, ImmSrcD,
@@ -203,7 +204,8 @@ module controller(input  logic		 clk, reset,
                   // Writeback stage control signals
                   output logic 	     RegWriteW, // for datapath and Hazard Unit
                   output logic [1:0] ResultSrcW,
-                  output logic      JalrControlE);
+                  output logic      JalrControlE,
+                  output logic [2:0] funct3M);
 
    // pipelined control signals
    logic 			     RegWriteD, RegWriteE;
@@ -246,9 +248,9 @@ assign PCSrcE = Branchout | JumpE; //Branch & (Zero ^ funct3[0])
    assign ResultSrcEb0 = ResultSrcE[0];
    
    // Memory stage pipeline control register
-   flopr #(4) controlregM(clk, reset,
-                          {RegWriteE, ResultSrcE, MemWriteE},
-                          {RegWriteM, ResultSrcM, MemWriteM});
+   flopr #(7) controlregM(clk, reset,
+                          {RegWriteE, ResultSrcE, MemWriteE, funct3E},
+                          {RegWriteM, ResultSrcM, MemWriteM, funct3M});
    
    // Writeback stage pipeline control register
    flopr #(3) controlregW(clk, reset,
@@ -329,7 +331,7 @@ module datapath(input logic clk, reset,
                 input logic [31:0]  InstrF,
                 // Decode stage signals
                 output logic [6:0]  opD,
-                output logic [2:0]  funct3D, 
+                output logic [2:0]  funct3D,
                 output logic 	    funct7b5D,
                 input logic 	    StallD, FlushD,
                 input logic [2:0]   ImmSrcD,
@@ -377,6 +379,9 @@ module datapath(input logic clk, reset,
    logic [31:0] 		    PCPlus4W;
    logic [31:0] 		    ResultW;
    logic [31:0]         PCTargetEmux;
+   logic [31:0]         WriteDataM_Original;
+   logic [2:0]         funct3M; 
+   //logic [31:0] loadedMemoryM;
 
    // Fetch stage pipeline register and logic
    mux2    #(32) pcmux(PCPlus4F, PCTargetE, PCSrcE, PCNextF);
@@ -413,12 +418,14 @@ module datapath(input logic clk, reset,
    // Memory stage pipeline register
    flopr  #(101) regM(clk, reset, 
                       {ALUResultE, WriteDataE, RdE, PCPlus4E},
-                      {ALUResultM, WriteDataM, RdM, PCPlus4M});
+                      {ALUResultM, WriteDataM_Original, RdM, PCPlus4M});
    
    // Writeback stage pipeline register and logic
    flopr  #(101) regW(clk, reset, 
                       {ALUResultM, ReadDataM, RdM, PCPlus4M},
                       {ALUResultW, ReadDataW, RdW, PCPlus4W});
+  //loadextend loader(ALUResult,ReadData,load,LoadExtendOut);
+   store store(ALUResultM, WriteDataM_Original, ReadDataM, funct3M[2:0], WriteDataM);
    mux3   #(32)  resultmux(ALUResultW, ReadDataW, PCPlus4W, ResultSrcW, ResultW);	
 endmodule
 
@@ -648,7 +655,7 @@ module store (input logic [31:0] ALUResult,
   input logic [2:0] funct3,
   output logic [31:0] storedMemory);
   always_comb
-  case(loadcontrol)
+  case(funct3)
   3'b010: storedMemory =  WriteData; // SW (Store Word)
   3'b001: storedMemory = ALUResult[1] ? {WriteData[15:0], ReadData[15:0]} : {ReadData[31:16], WriteData[15:0]}; // SH (Store Halfword)
   3'b000: storedMemory = ALUResult[1] ? 
@@ -663,10 +670,3 @@ module store (input logic [31:0] ALUResult,
   default: storedMemory =WriteData; // Default to SW
   endcase
 endmodule
-// module #(
-//   parameters
-// ) (
-//   ports
-// );
-  
-// endmodule

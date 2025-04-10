@@ -1,6 +1,6 @@
 # do riscv_pipelined.do
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 17:07:39 on Apr 08,2025
+# Start time: 18:13:40 on Apr 10,2025
 # vlog riscv_pipelined.sv 
 # -- Compiling module testbench
 # -- Compiling module top
@@ -23,17 +23,20 @@
 # -- Compiling module imem
 # -- Compiling module dmem
 # -- Compiling module alu
+# -- Compiling module loadextend
+# -- Compiling module store
 # 
 # Top level modules:
 # 	testbench
 # 	mux4
-# End time: 17:07:39 on Apr 08,2025, Elapsed time: 0:00:00
+# 	loadextend
+# End time: 18:13:40 on Apr 10,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -debugdb -voptargs="+acc" work.testbench 
-# Start time: 17:07:39 on Apr 08,2025
+# Start time: 18:13:40 on Apr 10,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vsim-8611) Generating debug db.
-# ** Note: (vopt-4301) Memory core inferred for signal 'RAM' width=32, depth=2048, type=RAM at location riscv_pipelined.sv:585
+# ** Note: (vopt-4301) Memory core inferred for signal 'RAM' width=32, depth=2048, type=RAM at location riscv_pipelined.sv:592
 # //  ModelSim SE-64 2021.3 Jul 13 2021
 # //
 # //  Copyright 1991-2021 Mentor Graphics Corporation
@@ -68,6 +71,7 @@
 # Loading work.mux3(fast)
 # Loading work.alu(fast)
 # Loading work.flopr(fast__2)
+# Loading work.store(fast)
 # Loading work.hazard(fast)
 # Loading work.imem(fast)
 # Loading work.dmem(fast)
@@ -81,124 +85,107 @@
 # configure wave not supported in batch mode
 # configure wave not supported in batch mode
 # configure wave not supported in batch mode
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
-# Simulation succeeded
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
+# Simulation failed
 # add schematic not supported in batch mode
-# End time: 17:07:46 on Apr 08,2025, Elapsed time: 0:00:07
+# End time: 18:28:44 on Apr 10,2025, Elapsed time: 0:15:04
 # Errors: 1, Warnings: 0
