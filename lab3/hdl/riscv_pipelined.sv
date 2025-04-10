@@ -92,7 +92,7 @@ module testbench();
    initial
      begin
 	string memfilename;
-        memfilename = {"../testing/jal.memfile"};
+        memfilename = {"../testing/jalr.memfile"};
 	$readmemh(memfilename, dut.imem.RAM);
      end
    
@@ -627,6 +627,42 @@ module alu (input  logic [31:0] a, b,
    
 endmodule
 
+module loadextend(input logic [31:0]ALUResult,input logic[31:0] MemData, input logic [2:0] funct3,output logic [31:0] loadedMemory);
+always_comb
+case(funct3)
+3'b000: loadedMemory = ALUResult[0] ? ( ALUResult[1] ? {{24{MemData[31]}},MemData[31:24]} : {{24{MemData[15]}},MemData[15:8]}):
+(ALUResult[1] ? {{24{MemData[23]}},MemData[23:16]} : {{24{MemData[7]}},MemData[7:0]}); // lb
+3'b001: loadedMemory = ALUResult[1] ? {{16{MemData[31]}}, MemData[31:16]} : {{16{MemData[15]}}, MemData[15:0]}; // Lh
+3'b010: loadedMemory=MemData; //lw
+3'b100: loadedMemory= ALUResult[0] ? ( ALUResult[1]? {24'b0,MemData[31:24]}: {24'b0,MemData[15:8]}):
+(ALUResult[1] ? {24'b0,MemData[23:16]} : {24'b0,MemData[7:0]}); // lbu
+3'b101: loadedMemory = ALUResult[1] ? {16'b0, MemData[31:16]} : {16'b0, MemData[15:0]};  //lhu
+
+default: loadedMemory=32'bx; //undefined load
+endcase//case load
+endmodule
+
+module store (input logic [31:0] ALUResult, 
+  input logic [31:0] WriteData, 
+  input logic [31:0] ReadData, 
+  input logic [2:0] funct3,
+  output logic [31:0] storedMemory);
+  always_comb
+  case(loadcontrol)
+  3'b010: storedMemory =  WriteData; // SW (Store Word)
+  3'b001: storedMemory = ALUResult[1] ? {WriteData[15:0], ReadData[15:0]} : {ReadData[31:16], WriteData[15:0]}; // SH (Store Halfword)
+  3'b000: storedMemory = ALUResult[1] ? 
+    (ALUResult[0] ? 
+      {WriteData[7:0], ReadData[23:0]} :      //byte 3 (31:24)
+      {ReadData[31:24], WriteData[7:0], ReadData[15:0]} //byte 2 (23:16)
+    ) : 
+    (ALUResult[0] ? 
+      {ReadData[31:16], WriteData[7:0], ReadData[7:0]} : //byte 1 (15:8)
+      {ReadData[31:8], WriteData[7:0]}        //byte 0 (7:0)          
+    );//sb
+  default: storedMemory =WriteData; // Default to SW
+  endcase
+endmodule
 // module #(
 //   parameters
 // ) (
