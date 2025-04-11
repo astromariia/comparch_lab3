@@ -92,7 +92,7 @@ module testbench();
    initial
      begin
 	string memfilename;
-        memfilename = {"../testing/lh.memfile"};
+        memfilename = {"../testing/lw.memfile"};
 	      $readmemh(memfilename, dut.imem.RAM);
         $readmemh(memfilename, dut.dmem.RAM);
      end
@@ -651,8 +651,8 @@ module loadextend(input logic [31:0] ALUResult,
       (ALUResult[1] ? {24'b0,MemData[23:16]} : {24'b0,MemData[7:0]}); // lbu
     3'b101: loadedMemory = ALUResult[1] ? {16'b0, MemData[31:16]} : {16'b0, MemData[15:0]};  //lhu
 
-default: loadedMemory=32'bx; //undefined load
-endcase//case load
+    default: loadedMemory=32'bx; //undefined load
+    endcase
 endmodule
 
 module store (input logic [31:0] ALUResult, 

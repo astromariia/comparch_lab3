@@ -11,10 +11,10 @@ z2
 cModel Technology
 Z0 dC:/Users/marii/OneDrive/Desktop/comparch_lab3/lab3/hdl
 T_opt
-!s110 1744387453
-VHjc=[N]jc[4KdIoGVKDDV3
+!s110 1744399337
+VVXf0WjDDaLc@RIQUEQz;m0
 04 9 4 work testbench fast 0
-=1-a8934a884d97-67f93d7c-2b2-5bb0
+=1-a8934a884d97-67f96be9-e8-384c
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work -debugdb +acc
 Z1 tCvgOpt 0
@@ -22,13 +22,13 @@ n@_opt
 OL;O;2021.3;73
 vadder
 Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z3 !s110 1744387452
+Z3 !s110 1744399336
 !i10b 1
 !s100 leZK]C1POCFhC`I3m?4NF2
 IfCUn8P=O3TNIZNQ;Rfl[43
 S1
 R0
-Z4 w1744387446
+Z4 w1744398961
 Z5 8riscv_pipelined.sv
 Z6 Friscv_pipelined.sv
 !i122 0
@@ -38,9 +38,9 @@ Z8 OL;L;2021.3;73
 r1
 !s85 0
 31
-Z9 !s108 1744387452.000000
+Z9 !s108 1744399336.000000
 Z10 !s107 riscv_pipelined.sv|
-Z11 !s90 riscv_pipelined.sv|
+Z11 !s90 -reportprogress|300|riscv_pipelined.sv|
 !i113 0
 Z12 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R1
@@ -528,8 +528,8 @@ vtestbench
 R2
 R3
 !i10b 1
-!s100 WkFc5@3QYP:B[C2mUmeGm1
-I`U[;<1<QBfP31Wbe80z1C2
+!s100 ^[IH^e=Go1W_[lA4b0:^V3
+IfW>hOF@6RM^7ebz9kUUT]3
 S1
 R0
 R4

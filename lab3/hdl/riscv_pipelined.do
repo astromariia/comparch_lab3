@@ -67,6 +67,8 @@ add wave -hex /testbench/dut/imem/*
 add wave -noupdate -divider -height 32 "Register File"
 add wave -hex /testbench/dut/rv32pipe/dp/rf/*
 add wave -hex /testbench/dut/rv32pipe/dp/rf/rf
+add wave -noupdate -divider -height 32 "Load Extend"
+add wave -hex /testbench/dut/rv32pipe/dp/loader/*
 
 
 -- Set Wave Output Items 

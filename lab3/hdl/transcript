@@ -1,7 +1,20 @@
+# //  ModelSim SE-64 2021.3 Jul 13 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
 # do riscv_pipelined.do
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 11:04:12 on Apr 11,2025
-# vlog riscv_pipelined.sv 
+# Start time: 14:22:16 on Apr 11,2025
+# vlog -reportprogress 300 riscv_pipelined.sv 
 # -- Compiling module testbench
 # -- Compiling module top
 # -- Compiling module riscv
@@ -29,26 +42,13 @@
 # Top level modules:
 # 	testbench
 # 	mux4
-# End time: 11:04:12 on Apr 11,2025, Elapsed time: 0:00:00
+# End time: 14:22:16 on Apr 11,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -debugdb -voptargs="+acc" work.testbench 
-# Start time: 11:04:12 on Apr 11,2025
+# Start time: 14:22:16 on Apr 11,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Note: (vopt-4301) Memory core inferred for signal 'RAM' width=32, depth=2048, type=RAM at location riscv_pipelined.sv:595
-# //  ModelSim SE-64 2021.3 Jul 13 2021
-# //
-# //  Copyright 1991-2021 Mentor Graphics Corporation
-# //  All Rights Reserved.
-# //
-# //  ModelSim SE-64 and its associated documentation contain trade
-# //  secrets and commercial or financial information that are the property of
-# //  Mentor Graphics Corporation and are privileged, confidential,
-# //  and exempt from disclosure under the Freedom of Information Act,
-# //  5 U.S.C. Section 552. Furthermore, this information
-# //  is prohibited from disclosure under the Trade Secrets Act,
-# //  18 U.S.C. Section 1905.
-# //
 # Loading sv_std.std
 # Loading work.testbench(fast)
 # Loading work.top(fast)
@@ -77,14 +77,6 @@
 # Loading work.dmem(fast)
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
 # ** Error: (vsim-8357) Internal debugDB error id:ct1  ret:1 table context_tbl already exists
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
 # Simulation failed
 # Simulation failed
 # Simulation failed
@@ -202,7 +194,14 @@
 # Simulation failed
 # Simulation failed
 # Simulation failed
-# Simulation failed
-# add schematic not supported in batch mode
-# End time: 11:04:17 on Apr 11,2025, Elapsed time: 0:00:05
-# Errors: 1, Warnings: 0
+# Debug data file does not match loaded design.
+# Debug data file does not match loaded design.
+# ** Error: Could not open the database because of the following problem accessing the required debug information:
+# Debug data file does not match loaded design.
+# Error in macro ./riscv_pipelined.do line 90
+# Could not open the database because of the following problem accessing the required debug information:
+# Debug data file does not match loaded design.
+#     while executing
+# "add schematic -full sim:/testbench/dut/rv32pipe"
+# End time: 14:34:37 on Apr 11,2025, Elapsed time: 0:12:21
+# Errors: 2, Warnings: 0
