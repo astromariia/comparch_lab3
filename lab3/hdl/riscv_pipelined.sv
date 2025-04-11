@@ -202,7 +202,7 @@ module controller(input  logic		 clk, reset,
                   // Memory stage control signals
                   output logic 	     MemWriteM,
                   output logic 	     RegWriteM,
-                  output logic [2:0]   funct3M,// for Hazard Unit				  
+                  output logic [2:0]   funct3M,			  
                   // Writeback stage control signals
                   output logic 	     RegWriteW, // for datapath and Hazard Unit
                   output logic [1:0] ResultSrcW,
@@ -355,7 +355,7 @@ module datapath(input logic clk, reset,
                 // Hazard Unit signals 
                 output logic [4:0]  Rs1D, Rs2D, Rs1E, Rs2E,
                 output logic [4:0]  RdE, RdM, RdW,
-                output logic [2:0] funct3M,funct3W);
+                input logic [2:0] funct3M,funct3W);
 
    // Fetch stage signals
    logic [31:0] 		    PCNextF, PCPlus4F;
