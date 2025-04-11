@@ -287,7 +287,7 @@ module maindec(input  logic [6:0] op,
        7'b1101111: controls = 16'b1_011_00_0_0_10_0_00_1_0; // jal
        7'b0110111: controls = 16'b1_100_01_1_0_00_0_00_0_0; // lui
        7'b1100111: controls = 16'b1_000_00_1_0_10_0_00_1_1; // jalr
-       7'b0010111: controls = 16'b1_100_10_0_0_00_0_00_0_0; // auipc    
+       7'b0010111: controls = 16'b1_100_10_1_0_00_0_00_0_0; // auipc    
        7'b0000000: controls = 16'b0_000_00_0_0_00_0_00_0_0; // need valid values at reset
        default:    controls = 16'bx_xxx_xx_x_x_xx_x_xx_x_x; // non-implemented instruction
      endcase
@@ -651,7 +651,7 @@ module loadextend(input logic [31:0] ALUResult,
       (ALUResult[1] ? {24'b0,MemData[23:16]} : {24'b0,MemData[7:0]}); // lbu
     3'b101: loadedMemory = ALUResult[1] ? {16'b0, MemData[31:16]} : {16'b0, MemData[15:0]};  //lhu
 
-    default: loadedMemory=32'bx; //undefined load
+    default: loadedMemory=MemData; //undefined load defaults to LW
     endcase
 endmodule
 
