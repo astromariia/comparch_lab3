@@ -93,7 +93,8 @@ module testbench();
      begin
 	string memfilename;
         memfilename = {"../testing/sh.memfile"};
-	$readmemh(memfilename, dut.imem.RAM);
+	      $readmemh(memfilename, dut.imem.RAM);
+        $readmemh(memfilename, dut.dmem.RAM);
      end
    
    // initialize test
