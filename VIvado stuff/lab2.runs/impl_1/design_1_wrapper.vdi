@@ -1,0 +1,1003 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Apr 11 16:34:34 2025
+# Process ID: 1092472
+# Current directory: /home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.runs/impl_1
+# Command line: vivado -log design_1_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
+# Log file: /home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.runs/impl_1/design_1_wrapper.vdi
+# Journal file: /home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.runs/impl_1/vivado.jou
+# Running On: CEAT-ENDV350-02L, OS: Linux, CPU Frequency: 3392.087 MHz, CPU Physical cores: 14, Host memory: 16437 MB
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.ipdefs/ip_repo_BAK_0_0_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+Command: link_design -top design_1_wrapper -part xc7z020clg484-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-454] Reading design checkpoint '/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_AXI_Converter_0_0/design_1_AXI_Converter_0_0.dcp' for cell 'design_1_i/AXI_Converter_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0.dcp' for cell 'design_1_i/axi_smc'
+INFO: [Project 1-454] Reading design checkpoint '/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.dcp' for cell 'design_1_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0.dcp' for cell 'design_1_i/rst_ps7_0_50M'
+INFO: [Project 1-454] Reading design checkpoint '/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_top_0_0/design_1_top_0_0.dcp' for cell 'design_1_i/top_0'
+Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1694.301 ; gain = 0.000 ; free physical = 1069 ; free virtual = 12827
+INFO: [Netlist 29-17] Analyzing 144 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc] for cell 'design_1_i/processing_system7_0/inst'
+Finished Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc] for cell 'design_1_i/processing_system7_0/inst'
+Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_1/bd_afc3_psr_aclk_0_board.xdc] for cell 'design_1_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_1/bd_afc3_psr_aclk_0_board.xdc] for cell 'design_1_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_1/bd_afc3_psr_aclk_0.xdc] for cell 'design_1_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_1/bd_afc3_psr_aclk_0.xdc] for cell 'design_1_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_ar_node/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:49]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:52]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:55]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:59]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:63]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:66]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:70]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:73]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:76]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:79]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:82]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:85]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:88]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:91]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:94]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:97]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:100]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:104]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:107]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:110]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:113]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:116]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:119]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-13' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:122]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:125]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:128]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-13' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:131]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:134]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:137]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:140]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:143]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:146]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:149]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:152]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:155]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:158]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:161]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:164]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:167]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:171]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:174]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc:178]
+Finished Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_6/bd_afc3_sarn_0_clocks.xdc] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_ar_node/inst'
+Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_r_node/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:49]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:52]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:55]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:59]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:63]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:66]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:70]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:73]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:76]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:79]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:82]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:85]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:88]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:91]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:94]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:97]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:100]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:104]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:107]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:110]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:113]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:116]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:119]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-13' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:122]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:125]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:128]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-13' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:131]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:134]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:137]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:149]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:158]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:161]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:164]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:167]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:171]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:174]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc:178]
+Finished Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_7/bd_afc3_srn_0_clocks.xdc] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_r_node/inst'
+Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_aw_node/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:49]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:52]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:55]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:59]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:63]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:66]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:70]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:73]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:76]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:79]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:82]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:85]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:88]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:91]
+INFO: [Common 17-14] Message 'Vivado 12-180' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:94]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:94]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:97]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:100]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:104]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:107]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:110]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:113]
+INFO: [Common 17-14] Message 'Vivado_Tcl 4-921' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc:113]
+Finished Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_8/bd_afc3_sawn_0_clocks.xdc] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_aw_node/inst'
+Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_9/bd_afc3_swn_0_clocks.xdc] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_w_node/inst'
+Finished Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_9/bd_afc3_swn_0_clocks.xdc] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_w_node/inst'
+Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_10/bd_afc3_sbn_0_clocks.xdc] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_b_node/inst'
+Finished Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_10/bd_afc3_sbn_0_clocks.xdc] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_b_node/inst'
+Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/smartconnect.xdc] for cell 'design_1_i/axi_smc/inst'
+WARNING: [Vivado_Tcl 4-919] Waiver ID 'CDC-1' -from list should not be empty. [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/smartconnect.xdc:1]
+Finished Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/smartconnect.xdc] for cell 'design_1_i/axi_smc/inst'
+Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_board.xdc] for cell 'design_1_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_board.xdc] for cell 'design_1_i/rst_ps7_0_50M/U0'
+Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0.xdc] for cell 'design_1_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0.xdc] for cell 'design_1_i/rst_ps7_0_50M/U0'
+Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/constrs_1/new/constr.xdc]
+Finished Parsing XDC File [/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.srcs/constrs_1/new/constr.xdc]
+INFO: [Project 1-1714] 19 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-1687] 228 scoped IP constraints or related sub-commands were skipped due to synthesis logic optimizations usually triggered by constant connectivity or unconnected output pins. To review the skipped constraints and messages, run the command 'set_param netlist.IPMsgFiltering false' before opening the design.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2638.672 ; gain = 0.000 ; free physical = 513 ; free virtual = 12272
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 66 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 52 instances
+  RAM32M => RAM32M (inverted pins: WCLK) (RAMD32(x6), RAMS32(x2)): 10 instances
+  RAM32X1D => RAM32X1D (inverted pins: WCLK) (RAMD32(x2)): 4 instances
+
+19 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2638.672 ; gain = 1328.527 ; free physical = 513 ; free virtual = 12272
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00.57 ; elapsed = 00:00:00.35 . Memory (MB): peak = 2638.672 ; gain = 0.000 ; free physical = 504 ; free virtual = 12263
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 15a99db27
+
+Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.1 . Memory (MB): peak = 2638.672 ; gain = 0.000 ; free physical = 503 ; free virtual = 12262
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+
+Phase 1.1.1 Generate And Synthesize Debug Cores
+INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
+INFO: [Chipscope 16-329] Generating Script for core instance : u_ila_0 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:ila:6.2 for cell u_ila_0_CV.
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2842.375 ; gain = 0.000 ; free physical = 4669 ; free virtual = 12042
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2842.375 ; gain = 0.000 ; free physical = 4653 ; free virtual = 12027
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2852.281 ; gain = 0.000 ; free physical = 4656 ; free virtual = 12029
+Phase 1.1.1 Generate And Synthesize Debug Cores | Checksum: d78ec418
+
+Time (s): cpu = 00:01:23 ; elapsed = 00:01:00 . Memory (MB): peak = 2852.281 ; gain = 29.750 ; free physical = 4656 ; free virtual = 12029
+Phase 1.1 Core Generation And Design Setup | Checksum: d78ec418
+
+Time (s): cpu = 00:01:23 ; elapsed = 00:01:00 . Memory (MB): peak = 2852.281 ; gain = 29.750 ; free physical = 4656 ; free virtual = 12029
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: d78ec418
+
+Time (s): cpu = 00:01:23 ; elapsed = 00:01:00 . Memory (MB): peak = 2852.281 ; gain = 29.750 ; free physical = 4656 ; free virtual = 12029
+Phase 1 Initialization | Checksum: d78ec418
+
+Time (s): cpu = 00:01:23 ; elapsed = 00:01:00 . Memory (MB): peak = 2852.281 ; gain = 29.750 ; free physical = 4656 ; free virtual = 12029
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: d78ec418
+
+Time (s): cpu = 00:01:23 ; elapsed = 00:01:00 . Memory (MB): peak = 2852.281 ; gain = 29.750 ; free physical = 4656 ; free virtual = 12029
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: d78ec418
+
+Time (s): cpu = 00:01:23 ; elapsed = 00:01:00 . Memory (MB): peak = 2852.281 ; gain = 29.750 ; free physical = 4654 ; free virtual = 12027
+Phase 2 Timer Update And Timing Data Collection | Checksum: d78ec418
+
+Time (s): cpu = 00:01:23 ; elapsed = 00:01:00 . Memory (MB): peak = 2852.281 ; gain = 29.750 ; free physical = 4654 ; free virtual = 12027
+
+Phase 3 Retarget
+INFO: [Opt 31-1566] Pulled 2 inverters resulting in an inversion of 140 pins
+INFO: [Opt 31-138] Pushed 11 inverter(s) to 76 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: d23558e8
+
+Time (s): cpu = 00:01:24 ; elapsed = 00:01:00 . Memory (MB): peak = 2852.281 ; gain = 29.750 ; free physical = 4654 ; free virtual = 12028
+Retarget | Checksum: d23558e8
+INFO: [Opt 31-389] Phase Retarget created 84 cells and removed 129 cells
+INFO: [Opt 31-1021] In phase Retarget, 86 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 7 inverter(s) to 17 load pin(s).
+Phase 4 Constant propagation | Checksum: eed6d759
+
+Time (s): cpu = 00:01:24 ; elapsed = 00:01:00 . Memory (MB): peak = 2852.281 ; gain = 29.750 ; free physical = 4654 ; free virtual = 12028
+Constant propagation | Checksum: eed6d759
+INFO: [Opt 31-389] Phase Constant propagation created 169 cells and removed 910 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 69 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 Sweep
+Phase 5 Sweep | Checksum: 10b01b60c
+
+Time (s): cpu = 00:01:24 ; elapsed = 00:01:00 . Memory (MB): peak = 2852.281 ; gain = 29.750 ; free physical = 4654 ; free virtual = 12028
+Sweep | Checksum: 10b01b60c
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 268 cells
+INFO: [Opt 31-1021] In phase Sweep, 1202 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 10b01b60c
+
+Time (s): cpu = 00:01:24 ; elapsed = 00:01:01 . Memory (MB): peak = 2852.281 ; gain = 29.750 ; free physical = 4652 ; free virtual = 12026
+BUFG optimization | Checksum: 10b01b60c
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/U_CDONE/I_YESLUT6.U_SRL32_A due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/U_CDONE/I_YESLUT6.U_SRL32_B due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/U_NS0/I_YESLUT6.U_SRL32_A due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/U_NS0/I_YESLUT6.U_SRL32_B due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/U_NS0/I_YESLUT6.U_SRL32_C due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/U_NS0/I_YESLUT6.U_SRL32_D due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/U_NS1/I_YESLUT6.U_SRL32_A due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/U_NS1/I_YESLUT6.U_SRL32_B due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/U_NS1/I_YESLUT6.U_SRL32_C due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/U_NS1/I_YESLUT6.U_SRL32_D due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_A due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/U_CMPRESET/I_YESLUT6.U_SRL32_B due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/U_WCE/I_YESLUT6.U_SRLC16E due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/U_WHCMPCE/I_YESLUT6.U_SRL32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_window_counter/U_WLCMPCE/I_YESLUT6.U_SRL32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCE/I_YESLUT6.U_SRLC16E due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCMPCE/I_YESLUT6.U_SRL32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_A due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from u_ila_0/inst/ila_core_inst/u_ila_cap_ctrl/u_cap_addrgen/u_cap_sample_counter/U_SCRST/I_YESLUT6.U_SRL32_B due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/exit_inst/gen_r_cmd_fifo.r_cmd_fifo/gen_srls[3].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/exit_inst/gen_r_cmd_fifo.r_cmd_fifo/gen_srls[10].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_cmd_fifo/gen_srls[19].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_cmd_fifo/gen_srls[17].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_cmd_fifo/gen_srls[20].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[10].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[11].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[12].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[13].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[14].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[15].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[16].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[17].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[18].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[19].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[20].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[21].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[22].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[23].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[24].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[25].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[26].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[27].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[28].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[29].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[30].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[31].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[32].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[33].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[34].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[35].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[4].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[5].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[6].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[7].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[8].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/gen_thread_loop[0].r_payld_fifo/gen_srls[9].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_cmd_fifo/gen_srls[10].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_cmd_fifo/gen_srls[14].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_cmd_fifo/gen_srls[15].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[100].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[101].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[102].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[103].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[68].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[69].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[70].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[71].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[72].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[73].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[74].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[75].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[76].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[77].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[78].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[79].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[80].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[81].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[82].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[83].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[84].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[85].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[86].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[87].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[88].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[89].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[90].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[91].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[92].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[93].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[94].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[95].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[96].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[97].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[98].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/converter.wrap_narrow_inst/w_payld_fifo/gen_srls[99].srl_nx1/shift_reg_reg[0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[2].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[4].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[5].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[6].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from design_1_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[9].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+INFO: [Common 17-14] Message 'Opt 31-1131' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 10b01b60c
+
+Time (s): cpu = 00:01:24 ; elapsed = 00:01:01 . Memory (MB): peak = 2852.281 ; gain = 29.750 ; free physical = 4652 ; free virtual = 12026
+Shift Register Optimization | Checksum: 10b01b60c
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 121fa9d71
+
+Time (s): cpu = 00:01:24 ; elapsed = 00:01:01 . Memory (MB): peak = 2852.281 ; gain = 29.750 ; free physical = 4652 ; free virtual = 12026
+Post Processing Netlist | Checksum: 121fa9d71
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 77 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 17997396f
+
+Time (s): cpu = 00:01:24 ; elapsed = 00:01:01 . Memory (MB): peak = 2852.281 ; gain = 29.750 ; free physical = 4652 ; free virtual = 12026
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2852.281 ; gain = 0.000 ; free physical = 4652 ; free virtual = 12026
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 17997396f
+
+Time (s): cpu = 00:01:24 ; elapsed = 00:01:01 . Memory (MB): peak = 2852.281 ; gain = 29.750 ; free physical = 4652 ; free virtual = 12026
+Phase 9 Finalization | Checksum: 17997396f
+
+Time (s): cpu = 00:01:24 ; elapsed = 00:01:01 . Memory (MB): peak = 2852.281 ; gain = 29.750 ; free physical = 4652 ; free virtual = 12026
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              84  |             129  |                                             86  |
+|  Constant propagation         |             169  |             910  |                                             69  |
+|  Sweep                        |               0  |             268  |                                           1202  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                             77  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 17997396f
+
+Time (s): cpu = 00:01:24 ; elapsed = 00:01:01 . Memory (MB): peak = 2852.281 ; gain = 29.750 ; free physical = 4652 ; free virtual = 12026
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2852.281 ; gain = 0.000 ; free physical = 4652 ; free virtual = 12026
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 5 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 5 newly gated: 0 Total Ports: 10
+Ending PowerOpt Patch Enables Task | Checksum: 1143a6ec1
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4449 ; free virtual = 11831
+Ending Power Optimization Task | Checksum: 1143a6ec1
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.87 . Memory (MB): peak = 3196.219 ; gain = 343.938 ; free physical = 4449 ; free virtual = 11831
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1143a6ec1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4449 ; free virtual = 11831
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4449 ; free virtual = 11831
+Ending Netlist Obfuscation Task | Checksum: 151a890b5
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4449 ; free virtual = 11831
+INFO: [Common 17-83] Releasing license: Implementation
+61 Infos, 211 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:01:28 ; elapsed = 00:01:03 . Memory (MB): peak = 3196.219 ; gain = 557.547 ; free physical = 4449 ; free virtual = 11831
+INFO: [runtcl-4] Executing : report_drc -file design_1_wrapper_drc_opted.rpt -pb design_1_wrapper_drc_opted.pb -rpx design_1_wrapper_drc_opted.rpx
+Command: report_drc -file design_1_wrapper_drc_opted.rpt -pb design_1_wrapper_drc_opted.pb -rpx design_1_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.runs/impl_1/design_1_wrapper_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4438 ; free virtual = 11823
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4438 ; free virtual = 11823
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4438 ; free virtual = 11823
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4438 ; free virtual = 11823
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4438 ; free virtual = 11823
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4435 ; free virtual = 11822
+Write Physdb Complete: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4435 ; free virtual = 11822
+INFO: [Common 17-1381] The checkpoint '/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.runs/impl_1/design_1_wrapper_opt.dcp' has been generated.
+INFO: [Chipscope 16-240] Debug cores have already been implemented
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4408 ; free virtual = 11797
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: cb766373
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4408 ; free virtual = 11797
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4408 ; free virtual = 11797
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: f25e1d09
+
+Time (s): cpu = 00:00:00.84 ; elapsed = 00:00:00.38 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4408 ; free virtual = 11802
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 15ba14b69
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4404 ; free virtual = 11801
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 15ba14b69
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4404 ; free virtual = 11801
+Phase 1 Placer Initialization | Checksum: 15ba14b69
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4404 ; free virtual = 11802
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 16ba0634f
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4422 ; free virtual = 11820
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 10a918a86
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4450 ; free virtual = 11848
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 10a918a86
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4450 ; free virtual = 11848
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 UpdateTiming Before Physical Synthesis
+Phase 2.4.1 UpdateTiming Before Physical Synthesis | Checksum: 27fe1f929
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:03 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4462 ; free virtual = 11861
+
+Phase 2.4.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 302 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 128 nets or LUTs. Breaked 0 LUT, combined 128 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register to Pipeline Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4461 ; free virtual = 11861
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |            128  |                   128  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |            128  |                   128  |           0  |           4  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.4.2 Physical Synthesis In Placer | Checksum: 1ff2679c3
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:04 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4459 ; free virtual = 11860
+Phase 2.4 Global Placement Core | Checksum: 1a0b7f580
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:04 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4459 ; free virtual = 11860
+Phase 2 Global Placement | Checksum: 1a0b7f580
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:04 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4459 ; free virtual = 11860
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1a0d472cb
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:04 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4458 ; free virtual = 11860
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1efecbb30
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4458 ; free virtual = 11860
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 1fa710c68
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4458 ; free virtual = 11860
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1d37c9918
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4458 ; free virtual = 11860
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 1750e0408
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4458 ; free virtual = 11860
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 12e8e5df8
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4458 ; free virtual = 11860
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: 11f22a4bc
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4458 ; free virtual = 11860
+Phase 3 Detail Placement | Checksum: 11f22a4bc
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4458 ; free virtual = 11860
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 18dbc7885
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=5.018 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 17a7ae672
+
+Time (s): cpu = 00:00:00.69 ; elapsed = 00:00:00.22 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4459 ; free virtual = 11861
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 17a7ae672
+
+Time (s): cpu = 00:00:00.74 ; elapsed = 00:00:00.27 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4459 ; free virtual = 11861
+Phase 4.1.1.1 BUFG Insertion | Checksum: 18dbc7885
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:06 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4459 ; free virtual = 11861
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=5.018. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 14447d46c
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:06 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4459 ; free virtual = 11861
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:06 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4459 ; free virtual = 11861
+Phase 4.1 Post Commit Optimization | Checksum: 14447d46c
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:06 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4459 ; free virtual = 11861
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 14447d46c
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:06 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4459 ; free virtual = 11861
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                1x1|
+|___________|___________________|___________________|
+|      South|                1x1|                1x1|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 14447d46c
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:06 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4459 ; free virtual = 11861
+Phase 4.3 Placer Reporting | Checksum: 14447d46c
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:06 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4459 ; free virtual = 11861
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4459 ; free virtual = 11861
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:06 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4459 ; free virtual = 11861
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: a5c3ca5e
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:06 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4459 ; free virtual = 11861
+Ending Placer Task | Checksum: 55c4af22
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:06 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4459 ; free virtual = 11861
+97 Infos, 211 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:07 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4459 ; free virtual = 11861
+INFO: [runtcl-4] Executing : report_io -file design_1_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.11 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4440 ; free virtual = 11842
+INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_placed.rpt -pb design_1_wrapper_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file design_1_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.09 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4408 ; free virtual = 11810
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4405 ; free virtual = 11810
+Wrote PlaceDB: Time (s): cpu = 00:00:00.74 ; elapsed = 00:00:00.22 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4405 ; free virtual = 11819
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4405 ; free virtual = 11819
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4405 ; free virtual = 11819
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4405 ; free virtual = 11820
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4405 ; free virtual = 11821
+Write Physdb Complete: Time (s): cpu = 00:00:00.82 ; elapsed = 00:00:00.25 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4405 ; free virtual = 11821
+INFO: [Common 17-1381] The checkpoint '/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.runs/impl_1/design_1_wrapper_placed.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 16ad31ef ConstDB: 0 ShapeSum: 3f177d33 RouteDB: 0
+Post Restoration Checksum: NetGraph: c7cbe206 | NumContArr: 8b328c82 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 2d85063c2
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4335 ; free virtual = 11746
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 2d85063c2
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4335 ; free virtual = 11746
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 2d85063c2
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4334 ; free virtual = 11746
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 24d74cd3d
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4304 ; free virtual = 11717
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.179  | TNS=0.000  | WHS=-0.205 | THS=-165.740|
+
+
+Phase 2.4 Update Timing for Bus Skew
+
+Phase 2.4.1 Update Timing
+Phase 2.4.1 Update Timing | Checksum: 20c68f481
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4304 ; free virtual = 11717
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.179  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 2.4 Update Timing for Bus Skew | Checksum: 1d2b4a5f9
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4298 ; free virtual = 11715
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 8045
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 8045
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 1e29aa26d
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4286 ; free virtual = 11703
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 1e29aa26d
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4286 ; free virtual = 11703
+
+Phase 3.2 Initial Net Routing
+Phase 3.2 Initial Net Routing | Checksum: 1be2332c7
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:12 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4286 ; free virtual = 11703
+Phase 3 Initial Routing | Checksum: 1be2332c7
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:12 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4286 ; free virtual = 11703
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 1047
+ Number of Nodes with overlaps = 218
+ Number of Nodes with overlaps = 79
+ Number of Nodes with overlaps = 18
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.867  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 1c9b4625c
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:15 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4285 ; free virtual = 11703
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.867  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 1d2c6197e
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:15 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4286 ; free virtual = 11704
+Phase 4 Rip-up And Reroute | Checksum: 1d2c6197e
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:15 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4286 ; free virtual = 11704
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 25a5b760a
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:15 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4286 ; free virtual = 11704
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.982  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Delay CleanUp | Checksum: 2651baf5c
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:15 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4286 ; free virtual = 11704
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 2651baf5c
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:15 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4286 ; free virtual = 11704
+Phase 5 Delay and Skew Optimization | Checksum: 2651baf5c
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:15 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4286 ; free virtual = 11704
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 28c9866a8
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:15 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4286 ; free virtual = 11704
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.982  | TNS=0.000  | WHS=0.034  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 2775da4d5
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:15 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4286 ; free virtual = 11704
+Phase 6 Post Hold Fix | Checksum: 2775da4d5
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:15 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4286 ; free virtual = 11704
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 1.19043 %
+  Global Horizontal Routing Utilization  = 1.75186 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 2775da4d5
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:15 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4286 ; free virtual = 11704
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 2775da4d5
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:15 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4283 ; free virtual = 11700
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 1ba0def51
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:15 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4283 ; free virtual = 11700
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=4.982  | TNS=0.000  | WHS=0.034  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 1ba0def51
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:16 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4283 ; free virtual = 11700
+INFO: [Route 35-16] Router Completed Successfully
+
+Phase 11 Post-Route Event Processing
+Phase 11 Post-Route Event Processing | Checksum: 184491219
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:16 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4283 ; free virtual = 11701
+Ending Routing Task | Checksum: 184491219
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:16 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4283 ; free virtual = 11701
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+117 Infos, 211 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:16 . Memory (MB): peak = 3196.219 ; gain = 0.000 ; free physical = 4283 ; free virtual = 11701
+INFO: [runtcl-4] Executing : report_drc -file design_1_wrapper_drc_routed.rpt -pb design_1_wrapper_drc_routed.pb -rpx design_1_wrapper_drc_routed.rpx
+Command: report_drc -file design_1_wrapper_drc_routed.rpt -pb design_1_wrapper_drc_routed.pb -rpx design_1_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.runs/impl_1/design_1_wrapper_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.runs/impl_1/design_1_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
+Command: report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+127 Infos, 211 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file design_1_wrapper_route_status.rpt -pb design_1_wrapper_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file design_1_wrapper_timing_summary_routed.rpt -pb design_1_wrapper_timing_summary_routed.pb -rpx design_1_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file design_1_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file design_1_wrapper_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file design_1_wrapper_bus_skew_routed.rpt -pb design_1_wrapper_bus_skew_routed.pb -rpx design_1_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3269.234 ; gain = 0.000 ; free physical = 4195 ; free virtual = 11622
+Wrote PlaceDB: Time (s): cpu = 00:00:00.71 ; elapsed = 00:00:00.22 . Memory (MB): peak = 3269.234 ; gain = 0.000 ; free physical = 4195 ; free virtual = 11631
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3269.234 ; gain = 0.000 ; free physical = 4195 ; free virtual = 11631
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3269.234 ; gain = 0.000 ; free physical = 4195 ; free virtual = 11632
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3269.234 ; gain = 0.000 ; free physical = 4194 ; free virtual = 11632
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3269.234 ; gain = 0.000 ; free physical = 4193 ; free virtual = 11632
+Write Physdb Complete: Time (s): cpu = 00:00:00.88 ; elapsed = 00:00:00.29 . Memory (MB): peak = 3269.234 ; gain = 0.000 ; free physical = 4193 ; free virtual = 11632
+INFO: [Common 17-1381] The checkpoint '/home/02-comp-arch-f/Desktop/ecen4243S25/lab3/lab3/lab2.runs/impl_1/design_1_wrapper_routed.dcp' has been generated.
+INFO: [Memdata 28-167] Found XPM memory block design_1_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_1_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block design_1_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_1_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block design_1_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_1_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block design_1_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_1_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+Command: write_bitstream -force design_1_wrapper.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A1' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1/I1) is not included in the LUT equation: 'O5=(A4*A5)+(A4*(~A5)*(~A3))+((~A4))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A2' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1/I0) is not included in the LUT equation: 'O5=(A4*A5)+(A4*(~A5)*(~A3))+((~A4))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A3' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.id_state[0]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.id_state[0]_i_1/I0) is not included in the LUT equation: 'O6=(A6+~A6)*((A2))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC RTSTAT-10] No routable loads: 25 net(s) have no routable loads. The problem bus(es) and/or net(s) are dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/TMS, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_capture[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_runtest[0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i... and (the first 15 of 23 listed).
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 4 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./design_1_wrapper.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+18 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 3544.402 ; gain = 275.168 ; free physical = 3873 ; free virtual = 11314
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 11 16:36:31 2025...
