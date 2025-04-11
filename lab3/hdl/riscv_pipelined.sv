@@ -164,19 +164,20 @@ module riscv(input  logic        clk, reset,
    logic [4:0] 			 Rs1D, Rs2D, Rs1E, Rs2E, RdE, RdM, RdW;
    logic              JalrControlE;
    logic [2:0]              funct3M;
+   logic [2:0]              funct3W;
    
    controller c(clk, reset,
 		opD, funct3D, funct7b5D, ImmSrcD,
 		FlushE, ZeroE,NegativeE,CarryE,vE, PCSrcE, ALUControlE, ALUSrcAE, ALUSrcBE, ResultSrcEb0,
-		MemWriteM, RegWriteM, 
-		RegWriteW, ResultSrcW, JalrControlE, funct3M);
+		MemWriteM, RegWriteM,funct3M, 
+		RegWriteW, ResultSrcW, JalrControlE, funct3W);
 
    datapath dp(clk, reset, StallF, JalrControlE, PCF, InstrF,
 	       opD, funct3D, funct7b5D, StallD, FlushD, ImmSrcD,
 	       FlushE, ForwardAE, ForwardBE, PCSrcE, ALUControlE, ALUSrcAE, ALUSrcBE, ZeroE,NegativeE,CarryE,vE,
                MemWriteM, WriteDataM, ALUResultM, ReadDataM,
                RegWriteW, ResultSrcW,
-               Rs1D, Rs2D, Rs1E, Rs2E, RdE, RdM, RdW);
+               Rs1D, Rs2D, Rs1E, Rs2E, RdE, RdM, RdW,funct3M,funct3W);
 
    hazard  hu(Rs1D, Rs2D, Rs1E, Rs2E, RdE, RdM, RdW,
               PCSrcE, ResultSrcEb0, RegWriteM, RegWriteW,
@@ -200,12 +201,13 @@ module controller(input  logic		 clk, reset,
                   output logic 	     ResultSrcEb0, // for Hazard Unit
                   // Memory stage control signals
                   output logic 	     MemWriteM,
-                  output logic 	     RegWriteM, // for Hazard Unit				  
+                  output logic 	     RegWriteM,
+                  output logic [2:0]   funct3M,// for Hazard Unit				  
                   // Writeback stage control signals
                   output logic 	     RegWriteW, // for datapath and Hazard Unit
                   output logic [1:0] ResultSrcW,
                   output logic      JalrControlE,
-                  output logic [2:0] funct3M);
+                  output logic [2:0] funct3W);
 
    // pipelined control signals
    logic 			     RegWriteD, RegWriteE;
@@ -253,9 +255,9 @@ assign PCSrcE = Branchout | JumpE; //Branch & (Zero ^ funct3[0])
                           {RegWriteM, ResultSrcM, MemWriteM, funct3M});
    
    // Writeback stage pipeline control register
-   flopr #(3) controlregW(clk, reset,
-                          {RegWriteM, ResultSrcM},
-                          {RegWriteW, ResultSrcW});     
+   flopr #(6) controlregW(clk, reset,
+                          {RegWriteM, ResultSrcM,funct3M},
+                          {RegWriteW, ResultSrcW,funct3W});     
 endmodule
 
 module maindec(input  logic [6:0] op,
@@ -352,7 +354,8 @@ module datapath(input logic clk, reset,
                 input logic [1:0]   ResultSrcW,
                 // Hazard Unit signals 
                 output logic [4:0]  Rs1D, Rs2D, Rs1E, Rs2E,
-                output logic [4:0]  RdE, RdM, RdW);
+                output logic [4:0]  RdE, RdM, RdW,
+                output logic [2:0] funct3M,funct3W);
 
    // Fetch stage signals
    logic [31:0] 		    PCNextF, PCPlus4F;
@@ -379,9 +382,8 @@ module datapath(input logic clk, reset,
    logic [31:0] 		    PCPlus4W;
    logic [31:0] 		    ResultW;
    logic [31:0]         PCTargetEmux;
-   logic [31:0]         WriteDataM_Original;
-   logic [2:0]         funct3M; 
-   //logic [31:0] loadedMemoryM;
+   logic [31:0]         WriteDataM_Original; 
+   logic [31:0]         ReadDataWout;
 
    // Fetch stage pipeline register and logic
    mux2    #(32) pcmux(PCPlus4F, PCTargetE, PCSrcE, PCNextF);
@@ -424,9 +426,9 @@ module datapath(input logic clk, reset,
    flopr  #(101) regW(clk, reset, 
                       {ALUResultM, ReadDataM, RdM, PCPlus4M},
                       {ALUResultW, ReadDataW, RdW, PCPlus4W});
-  //loadextend loader(ALUResult,ReadData,load,LoadExtendOut);
-   store store(ALUResultM, WriteDataM_Original, ReadDataM, funct3M[2:0], WriteDataM);
-   mux3   #(32)  resultmux(ALUResultW, ReadDataW, PCPlus4W, ResultSrcW, ResultW);	
+  loadextend loader(ALUResultW,ReadDataW,funct3W,ReadDataWout);
+   store store(ALUResultM, WriteDataM_Original, ReadDataM, funct3M, WriteDataM);
+   mux3   #(32)  resultmux(ALUResultW, ReadDataWout, PCPlus4W, ResultSrcW, ResultW);	
 endmodule
 
 // Hazard Unit: forward, stall, and flush
